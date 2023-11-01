@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Personel Website</title>
-        
-    </head>
-    <body>
-        <div id="time"></div>
-        <script>
-            const timeDiv = document.getElementById("time");
-            setInterval(()=>{
-                const nowTime = getTime();
-                timeDiv.innerText = nowTime;
-            })
-            function getTime(){
-                const date = new Date();
-                const hr = date.getHours();
-                const min = date.getMinutes();
-                const sec = date.getSeconds();
-                return `${hr < 10 ? '0' + hr : hr} : ${min < 10 ? '0' + min : min} : ${sec < 10 ? '0' + sec : sec}`;
-            }
-        </script>
 
-        <div>
-            <a href="blog_articles.html">Article Page</a>
-            <br>
-            <a href="https://github.dev/Bobbbbbbbbbby/bobbbbbbbbbby.github.io" target="_blank">Edit Page</a>
-        </div>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Personel Website</title>
+
+</head>
+
+<body>
+    <div id="time"></div>
+    <script src="script/show_time.js"></script>
+
+    <div>
+        <a href="blog_articles.html">Article Page</a>
+        <br>
+        <a href="https://github.dev/Bobbbbbbbbbby/bobbbbbbbbbby.github.io" target="_blank">Edit Page</a>
+    </div>
+</body>
+
 </html>
