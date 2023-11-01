@@ -3,6 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>Personel Website</title>
+        
+    </head>
+    <body>
+        <div id="time"></div>
         <script>
             const timeDiv = document.getElementById("time");
             setInterval(()=>{
@@ -17,9 +21,7 @@
                 return `${hr < 10 ? '0' + hr : hr} : ${min < 10 ? '0' + min : min} : ${sec < 10 ? '0' + sec : sec}`;
             }
         </script>
-    </head>
-    <body>
-        <div id="time"></div>
+
         <div>
             <a href="blog_articles.html">This link will go to articles page</a>
         </div>
