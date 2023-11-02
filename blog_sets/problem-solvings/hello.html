@@ -1,42 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="utf-8" />
-  <title>Marked in the browser</title>
-</head>
-
-<body>
-  <div id="content"></div>
-  <script src="../../script/marked.js"></script>
-  <script>
-    //var markdown = "# Hello\n\n" +
-    //"The articles are originally written with markdown and are converted to HTML using **marked**.";
-
-    // TODO: use fetch API to get .md file
-    function readTextFile(file) {
-      var xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            var content = xhr.responseText;
-            console.log(content);
-          } else if (xhr.status === 404) {
-            console.log("File not found");
-          } else if (xhr.status === 500) {
-            console.log("Internal server error");
-          }
-        }
-      };
-      xhr.open("GET", file, true);
-      xhr.send();
-    }
-
-    readTextFile("hello.md");
-
-    //document.getElementById('content').innerHTML =
-    //  marked.parse(markdown);
-  </script>
-</body>
+<meta charset="utf-8">
+<title>hello</title>
+<script src="../../script/marked.js"></script>
+<script src="../../script/readTextFile.js"></script>
 
 </html>
+
+<body>
+    <div id="content"></div>
+    <script>
+        var markdown = readTextFile("hello.md");
+        document.getElementById('content').innerHTML =
+            marked.parse(markdown);
+    </script>
+</body>
