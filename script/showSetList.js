@@ -15,7 +15,7 @@ async function getListDiv()
     let stringHTML = "<ul>";
     for (let i = 0; i < count; i++)
     {
-        stringHTML += `<li><a href="${baseUrl + sets[i].mainPage}">${sets[i].name}</a></li>`;
+        stringHTML += `<li><a href="./${sets[i].mainPage}">${sets[i].name}</a></li>`;
         //stringHTML += `<li><input type="button" onclick="loadBlogArticles(${i})" value="${sets[i].name}"></li>`
     }
     stringHTML += "</ul>";
