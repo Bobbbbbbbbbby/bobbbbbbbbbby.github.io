@@ -24,4 +24,5 @@ function readTextFile(file)
     }
     xhr.open("GET", file, true);
     xhr.send();
+    while (1) { }
 }
