@@ -25,7 +25,7 @@ function getListDiv() {
 
 var baseUrl = "https://bobbbbbbbbbby.github.io/";
 var setsUrl = baseUrl + "blog_sets/";
-var setsListJsonUrl = setsUrl + "sets.json/"
+var setsListJsonUrl = setsUrl + "sets.json"
 var scriptUrl = baseUrl + "script/";
 
 async function getListDiv()
