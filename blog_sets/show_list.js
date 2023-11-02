@@ -15,7 +15,7 @@ function getListDiv() {
     var count = obj.count;
     var stringHTML = "<ul>";
     for (var i = 0; i < count; i++) {
-        stringHTML = stringHTML + "<li>" + sets[i].name + "</li>";
+        stringHTML = stringHTML + "<li " + "id=" + "'" + sets[i].dir + "'"+ ">" + sets[i].name + "</li>";
     }
     stringHTML = stringHTML + "</ul>";
     return stringHTML;
