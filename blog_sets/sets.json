@@ -1,0 +1,7 @@
+{
+    "sets":[
+        {"name":"Problem Solvings", "dir":"blog_sets/problem-solvings/blogs.json"},
+        {"name":"Shares & Findings", "dir":"blog_sets/share-find/blogs.json"}
+    ],
+    "count":2
+}
