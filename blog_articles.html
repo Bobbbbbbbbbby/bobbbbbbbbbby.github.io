@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Blog Articles</title>
+    <script src="script/show_list.js"></script>
+    <script src="script/readFile.js"></script>
 </head>
 
 <body>
@@ -11,7 +13,7 @@
     <a href="index.html">Go back</a>
 
     <div id="sets-list"></div>
-    <script src="script/show_list.js">
+    <script>
         getListDiv().then((inner) => document.getElementById("sets-list").innerHTML = inner);
     </script>
 </body>

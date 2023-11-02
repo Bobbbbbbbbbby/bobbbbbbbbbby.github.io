@@ -23,33 +23,21 @@ function getListDiv() {
 
 
 
-var baseUrl = "https://bobbbbbbbbbby.github.io/";
-var setsUrl = baseUrl + "blog_sets/";
-var setsListJsonUrl = setsUrl + "sets.json"
-var scriptUrl = baseUrl + "script/";
+const baseUrl = "https://bobbbbbbbbbby.github.io/";
+const setsUrl = baseUrl + "blog_sets/";
+const setsListJsonUrl = setsUrl + "sets.json"
+const scriptUrl = baseUrl + "script/";
 
 async function getListDiv()
 {
-    var obj = await readJsonFile(setsListJsonUrl);
-    var sets = obj.sets;
-    var count = obj.count;
-    var stringHTML = "<ul>";
-    for (var i = 0; i < count; i++)
+    const obj = await readJsonFile(setsListJsonUrl);
+    const sets = obj.sets;
+    const count = obj.setsCount;
+    let stringHTML = "<ul>";
+    for (let i = 0; i < count; i++)
     {
         stringHTML += "<li>" + sets[i].name + "</li>";
     }
     stringHTML += "</ul>";
     return stringHTML;
-}
-
-async function readTextFile(file) {
-    var response = await fetch(file);
-    var markdown = await response.text();
-    return markdown;
-}
-
-async function readJsonFile(file) {
-    var response = await fetch(file);
-    var objFile = await response.json();
-    return objFile;
 }

@@ -1,13 +1,13 @@
 async function readTextFile(file)
 {
-    var response = await fetch(file);
-    var markdown = await response.text();
-    return markdown;
+    const response = await fetch(file);
+    return await response.text();
+
 }
 
 async function readJsonFile(file)
 {
-    var response = await fetch(file);
-    var objFile = await response.json();
-    return objFile;
+    const response = await fetch(file);
+    return await response.json();
+
 }
