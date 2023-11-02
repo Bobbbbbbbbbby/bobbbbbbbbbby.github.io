@@ -8,13 +8,15 @@
     <script src="script/readFile.js"></script>
 </head>
 
-<body>
+<body id="article_main">
     <h1>Blog Articles</h1>
-    <a href="index.html">Go back</a>
+    <a href="index.html">Back to Index</a>
 
     <div id="sets-list"></div>
     <script>
-        getListDiv().then((inner) => document.getElementById("sets-list").innerHTML = inner);
+        getListDiv()
+        .then((inner) => document.getElementById("sets-list").innerHTML = inner);
+
     </script>
 </body>
 

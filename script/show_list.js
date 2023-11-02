@@ -1,43 +1,53 @@
-/*var set_string =
-    '{' +
-        '"sets":[' +
-            '{"name":"Problem Solvings", "dir":"problem-solvings"},' +
-            '{"name":"Shares & Findings", "dir":"share-find"}' +
-        '],' +
-        '"count":2' +
-    '}';
-var setList = document.getElementById("sets-list");
-setList.innerHTML = getListDiv();
-
-function getListDiv() {
-    var obj = JSON.parse(set_string);
-    var sets = obj.sets;
-    var count = obj.count;
-    var stringHTML = "<ul>";
-    for (var i = 0; i < count; i++) {
-        stringHTML = stringHTML + "<li " + "id=" + "'" + sets[i].dir + "'"+ ">" + sets[i].name + "</li>";
-    }
-    stringHTML = stringHTML + "</ul>";
-    return stringHTML;
-}*/
-
-
-
 const baseUrl = "https://bobbbbbbbbbby.github.io/";
 const setsUrl = baseUrl + "blog_sets/";
 const setsListJsonUrl = setsUrl + "sets.json"
-const scriptUrl = baseUrl + "script/";
+
+let obj = null;
+let sets = null;
+let count = null;
+let articleMainOrigin = null;
 
 async function getListDiv()
 {
-    const obj = await readJsonFile(setsListJsonUrl);
-    const sets = obj.sets;
-    const count = obj.setsCount;
+    obj = await readJsonFile(setsListJsonUrl);
+    sets = obj.sets;
+    count = obj.setsCount;
     let stringHTML = "<ul>";
     for (let i = 0; i < count; i++)
     {
-        stringHTML += "<li>" + sets[i].name + "</li>";
+        //stringHTML += '<li>' + '<input type="button" onclick="loadBlogArticles" value="' + sets[i].name + '">' + '</li>';
+        stringHTML += `<li><input type="button" onclick="loadBlogArticles(${i})" value="${sets[i].name}"></li>`
     }
     stringHTML += "</ul>";
     return stringHTML;
+}
+
+async function getArticleDiv(setIndex)
+{
+    const obj = await readJsonFile(baseUrl + sets[setIndex].dir);
+    const blogs = obj.blogs;
+    const count = obj.blogCount;
+    let stringHTML = "<ul>";
+    for(let i = 0; i < count; i++)
+    {
+        stringHTML += `<li><a href="">${blogs[i].name}</a></li>`;
+    }
+    stringHTML += '</ul>';
+    return stringHTML;
+}
+
+function loadBlogArticles(setIndex)
+{
+    articleMainOrigin = document.getElementById("article_main").innerHTML;
+    let newContent = `<h1>${sets[setIndex].name}</h1>`;
+    newContent += `<div><input type="button" onclick="reloadOrigin()" value="Go Back"></div>`
+    newContent += `<div id="articles"></div>`
+    document.getElementById("article_main").innerHTML = newContent;
+    getArticleDiv(setIndex)
+    .then((inner)=> document.getElementById("articles").innerHTML = inner);
+}
+
+function reloadOrigin()
+{
+    document.getElementById("article_main").innerHTML = articleMainOrigin;
 }

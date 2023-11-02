@@ -3,5 +3,5 @@
         {"name":"hello", "file":"hello.md"},
         {"name":"blog1", "file":"blog1.md"}
     ],
-    "count":2
+    "blogCount":2
 }
