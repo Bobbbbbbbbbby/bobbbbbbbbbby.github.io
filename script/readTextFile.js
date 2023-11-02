@@ -1,8 +1,6 @@
-function readTextFile(file)
+async function readTextFile(file)
 {
-    var markdown = "";
-    fetch(file).then(res => {
-        markdown = res.text();
-    });
+    var response = await fetch(file);
+    var markdown = await response.text();
     return markdown;
 }

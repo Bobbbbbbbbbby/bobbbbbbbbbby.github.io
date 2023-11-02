@@ -10,8 +10,10 @@
 <body>
     <div id="content"></div>
     <script>
-        var markdown = readTextFile("hello.md");
-        document.getElementById('content').innerHTML =
-            marked.parse(markdown);
+        //fetch("https://bobbbbbbbbbby.github.io/blog_sets/problem-solvings/hello.md")
+        //.then((res)=> res.text())
+        //.then((markdown)=> document.getElementById('content').innerHTML=marked.parse(markdown));
+        readTextFile("https://bobbbbbbbbbby.github.io/blog_sets/problem-solvings/hello.md")
+        .then((markdown)=> document.getElementById('content').innerHTML = marked.parse(markdown));
     </script>
 </body>
