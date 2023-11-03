@@ -13,7 +13,7 @@ async function getBlogListHTML(blogSetURL)
     blogs = obj.blogs;
     blogCount = obj.blogCount;
     let stringHTML = '<ul>';
-    for(let i = 0; i < blogCount; i++)
+    for(let i = 0; i < blogs.length; i++)
     {
         stringHTML += `<li><input type="button" onclick="loadBlogArticle('${blogSetURL + "markdown/" + blogs[i].file}')" value = "${blogs[i].name}"></li>`;
     }

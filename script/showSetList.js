@@ -13,7 +13,7 @@ async function getListDiv()
     sets = obj.sets;
     count = obj.setsCount;
     let stringHTML = "<ul>";
-    for (let i = 0; i < count; i++)
+    for (let i = 0; i < sets.length; i++)
     {
         stringHTML += `<li><a href="./${sets[i].mainPage}">${sets[i].name}</a></li>`;
     }
