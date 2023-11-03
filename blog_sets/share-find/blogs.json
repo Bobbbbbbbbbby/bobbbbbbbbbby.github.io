@@ -1,5 +1,5 @@
 {
     "blogs":[
-        {"name":"hello", "file":"hello.md"}
+        {"name":"开发日志", "file":"devBlog.md"}
     ]
 }

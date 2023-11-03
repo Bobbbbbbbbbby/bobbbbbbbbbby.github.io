@@ -1,0 +1,20 @@
+html
+{
+    margin:0;
+    width: 100%;
+    height: 100%;
+    
+    background-color: rgb(0, 0, 0);
+    background-image: url(../img/kangtao.png);
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: center bottom;
+}
+
+/*如果设置为100%后出现了滚动条，将margin设置为0，因为浏览器的margin默认可能不是0*/
+body
+{
+    margin:0;
+    width: 100%;
+    height: 100%;
+}
