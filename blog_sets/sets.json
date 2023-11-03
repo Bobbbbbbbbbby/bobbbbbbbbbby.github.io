@@ -2,12 +2,10 @@
     "sets":[
         {
             "name":"Problem Solvings",
-            "dir":"blog_sets/problem-solvings/blogs.json",
             "mainPage":"blog_sets/problem-solvings/main.html"
         },
         {
             "name":"Shares & Findings",
-            "dir":"blog_sets/share-find/blogs.json",
             "mainPage":"blog_sets/share-find/main.html"
         }
     ],

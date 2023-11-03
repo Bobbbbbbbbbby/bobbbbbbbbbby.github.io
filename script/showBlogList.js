@@ -5,6 +5,8 @@ let obj = null;
 let blogs = null;
 let blogCount = null;
 
+let blogMainOrigin = null;
+
 async function getBlogListHTML(blogSetURL)
 {
     obj = await readJsonFile(blogSetURL + "blogs.json");
@@ -21,5 +23,13 @@ async function getBlogListHTML(blogSetURL)
 
 function loadBlogArticle(markdownURL)
 {
-    alert("hello");
+    blogMainOrigin = document.getElementById("blogMain").innerHTML;
+    document.getElementById("blogMain").innerHTML = `<input type="button" onclick="reloadOrigin()" value = "Go Back">`;
+    readTextFile(markdownURL)
+        .then((markdown) => document.getElementById("blogMain").innerHTML += marked.parse(markdown));
+}
+
+function reloadOrigin()
+{
+    document.getElementById("blogMain").innerHTML = blogMainOrigin;
 }

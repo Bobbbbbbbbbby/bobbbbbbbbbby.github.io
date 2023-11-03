@@ -6,16 +6,19 @@
     <title>Problem Solvings</title>
     <script src="../../script/readFile.js"></script>
     <script src="../../script/showBlogList.js"></script>
+    <script src="../../script/marked.js"></script>
 </head>
 
 <body>
-    <h1>Problem Solvings</h1>
-    <a href="../../blog_articles.html">Go Back to Article Sets Page</a>
-    <div id="articleList"></div>
-    <script>
-        getBlogListHTML("https://bobbbbbbbbbby.github.io/blog_sets/problem-solvings/")
-        .then((inner)=> document.getElementById("articleList").innerHTML = inner);
-    </script>
+    <div id="blogMain">
+        <h1>Problem Solvings</h1>
+        <a href="../../blog_articles.html">Go Back to Article Sets Page</a>
+        <div id="articleList"></div>
+        <script>
+            getBlogListHTML("https://bobbbbbbbbbby.github.io/blog_sets/problem-solvings/")
+            .then((inner)=> document.getElementById("articleList").innerHTML = inner);
+        </script>
+    </div>
 </body>
 
 </html>
