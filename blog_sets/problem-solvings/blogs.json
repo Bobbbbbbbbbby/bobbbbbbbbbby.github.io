@@ -1,7 +1,7 @@
 {
     "blogs":[
         {"name":"hello", "file":"hello.md"},
-        {"name":"blog1", "file":"blog1.md"}
+        {"name":"此静态Blog的实现方式", "file":"blogImplement.md"}
     ],
     "blogCount":2
 }
