@@ -1,6 +1,3 @@
-const baseURL = "https://bobbbbbbbbbby.github.io/";
-const setsURL = baseURL + "blog_sets/";
-
 let obj = null;
 let blogs = null;
 let blogCount = null;

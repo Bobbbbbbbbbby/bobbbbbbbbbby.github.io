@@ -5,7 +5,6 @@ const setsListJsonUrl = setsUrl + "sets.json"
 let obj = null;
 let sets = null;
 let count = null;
-let articleMainOrigin = null;
 
 async function getListDiv()
 {

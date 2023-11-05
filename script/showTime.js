@@ -1,7 +1,6 @@
 const timeDiv = document.getElementById("time");
 setInterval(() => {
-    const nowTime = getTime();
-    timeDiv.innerText = nowTime;
+    timeDiv.innerText = getTime();
 })
 
 function getTime() {
