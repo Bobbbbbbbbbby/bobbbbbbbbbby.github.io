@@ -11,7 +11,7 @@
     function loadIndexPage()
     {
         drawBoader().then(()=>{
-            setInterval(()=>{document.getElementById("time").innerText=getTime()})
+            setInterval(()=>{document.getElementById("time").innerText=getTime()}, 500);
             document.getElementById("link").innerHTML=
             `<a href="blog_articles.html">Article Page</a>
             <br>
