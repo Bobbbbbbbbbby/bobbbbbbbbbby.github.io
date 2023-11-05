@@ -5,17 +5,29 @@
     <meta charset="UTF-8">
     <title>Personel Website</title>
     <link rel="stylesheet" type="text/css" href="pageSrc/css/index.css">
+    <script src="script/showTime.js"></script>
+    <script src="script/kangtaoLine.js"></script>
+    <script>
+    function loadIndexPage()
+    {
+        drawBoader().then(()=>{
+            setInterval(()=>{document.getElementById("time").innerText=getTime()})
+            document.getElementById("link").innerHTML=
+            `<a href="blog_articles.html">Article Page</a>
+            <br>
+            <a href="https://github.dev/Bobbbbbbbbbby/bobbbbbbbbbby.github.io" target="_blank">Edit Page</a>`;
+        });
+    }
+    </script>
 </head>
 
 <body>
     <div id="time"></div>
-    <script src="script/showTime.js"></script>
-
-    <div>
-        <a href="blog_articles.html">Article Page</a>
-        <br>
-        <a href="https://github.dev/Bobbbbbbbbbby/bobbbbbbbbbby.github.io" target="_blank">Edit Page</a>
-    </div>
+    <div><canvas id="kangtaoLine" style="pointer-events: none"></canvas></div>
+    <div id="link"></div>
+    <script>
+        loadIndexPage();
+    </script>
 </body>
 
 </html>

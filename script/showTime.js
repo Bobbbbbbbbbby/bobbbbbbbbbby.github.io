@@ -1,7 +1,7 @@
-const timeDiv = document.getElementById("time");
-setInterval(() => {
-    timeDiv.innerText = getTime();
-})
+//const timeDiv = document.getElementById("time");
+//setInterval(() => {
+//    timeDiv.innerText = getTime();
+//}, 1000)
 
 function getTime() {
     const date = new Date();
