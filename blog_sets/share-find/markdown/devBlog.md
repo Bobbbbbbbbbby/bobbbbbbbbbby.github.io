@@ -15,6 +15,15 @@
 
 ### 为页面添加康陶元素
 *希望根据智能电子解决方案的白线来为页面添加边框*<br>
+为了让canvas覆盖整个屏幕，需要在css中进行如下处理，使得坐标采用绝对位置：
+```css
+{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+```
 准备采用`HTML canvas`的方式去做，一开始就发现画的东西错位，是因为`canvas`标签的`height`和`width`与其`style`
 中的`height`和`width`不是一个东西，需要优先设置标签的长和宽。<br>
 我使用`window.addEventListener`监听`resize`，在每次调整窗口大小时重新绘制边框。
