@@ -7,24 +7,27 @@
     <link rel="stylesheet" type="text/css" href="pageSrc/css/index.css">
     <script src="script/showTime.js"></script>
     <script src="script/kangtaoLine.js"></script>
+    <script src="script/loadArticlePage.js"></script>
+
     <script>
     function loadIndexPage()
     {
         drawBoader().then(()=>{
-            setInterval(()=>{document.getElementById("time").innerText=getTime()}, 500);
-            document.getElementById("link").innerHTML=
-            `<a href="blog_articles.html">Article Page</a>
-            <br>
-            <a href="https://github.dev/Bobbbbbbbbbby/bobbbbbbbbbby.github.io" target="_blank">Edit Page</a>`;
+            setInterval(()=>
+            {
+                document.getElementById("time").innerText=getTime()}, 500);
+                document.getElementById("innerPage").innerHTML=
+            `<input type="button" onclick="loadArticlePage()" value="Article Page"><br>
+            <a href="https://github.dev/Bobbbbbbbbbby/bobbbbbbbbbby.github.io" target="_blank"><input type="button" value="Edit Page"></a>`;
         });
     }
-    </script>
+    </script>>
 </head>
 
-<body>
+<body id="outerPage">
     <div id="time"></div>
     <div><canvas id="kangtaoLine" style="pointer-events: none"></canvas></div>
-    <div id="link"></div>
+    <div id="innerPage"></div>
     <script>
         window.onload = loadIndexPage;
     </script>

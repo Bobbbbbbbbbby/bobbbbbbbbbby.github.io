@@ -20,6 +20,10 @@ body
 
 #time
 {
+    position: absolute;
+    top:0;
+    left:45%;
+    width:10%;
     height: 20px;
     text-align: center;
     font-size: 18px;
@@ -32,4 +36,29 @@ body
     top: 0;
     width: 100%;
     height: 100%;
+}
+
+#innerPage
+{
+    position:absolute;
+    top: 30px;
+    left: 5%;
+    width: 90%;
+}
+
+#goback
+{
+    position:absolute;
+    top:0;
+    right:100%;
+    width: 50px;
+    height: 24px;
+}
+
+#innerFrame
+{
+    position:absolute;
+    top:0;
+    left:0;
+    border: none;
 }

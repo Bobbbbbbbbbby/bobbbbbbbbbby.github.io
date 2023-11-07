@@ -17,8 +17,7 @@ async function drawBoader()
     
     let context = canvas.getContext("2d");
     context.strokeStyle = "white";
-    context.lineWidth = 2.5;
-    context.lineCap = "round";
+    //context.lineCap = ;
     
     let kangtaoHeight = window.innerWidth * 0.2 * 0.212;
     let boaderLen = kangtaoHeight * 0.14;
@@ -35,6 +34,25 @@ async function drawBoader()
     await drawLeftRight(context, marginStartLeftX, bottomY, marginStartLeftX, topY, marginStartRightX, bottomY, marginStartRightX, topY);
     await drawLeftRight(context, marginStartLeftX, topY, topCenterEndLeft, topY, marginStartRightX, topY, topCenterEndRight, topY);
     
+    let leftStartX = window.innerWidth * 0.05;
+    let innerStartTopY = 30;
+    let innerStartBotY = window.innerHeight - kangtaoHeight - 10;
+    context.moveTo(leftStartX, innerStartTopY);
+    context.lineTo(leftStartX, innerStartBotY);
+    context.stroke();
+
+    await drawLeftRight(context, leftStartX, innerStartTopY, window.innerWidth - leftStartX, innerStartTopY, leftStartX, innerStartBotY, window.innerWidth - leftStartX, innerStartBotY)
+
+    context.moveTo(window.innerWidth - leftStartX, innerStartTopY);
+    context.lineTo(window.innerWidth - leftStartX, innerStartBotY);
+    context.stroke();
+
+    let width = canvas.width;
+    let height = canvas.height;
+
+    context.clearRect(0, 0, width, height);
+
+    instantDraw();
     drawing = 0;
 }
 
@@ -62,7 +80,7 @@ async function drawLeftRight(context, leftStartX, leftStartY, leftEndX, leftEndY
         rightY += rightYHop;
         context.lineTo(rightX, rightY);
         context.stroke();
-        await sleep(8);
+        await sleep(3);
     }
 }
 
@@ -74,8 +92,8 @@ function instantDraw()
 
     let context = canvas.getContext("2d");
     context.strokeStyle = "white";
-    context.lineWidth = 2.5;
-    context.lineCap = "round";
+    context.lineWidth = 2;
+
 
     let kangtaoHeight = window.innerWidth * 0.2 * 0.212;
     let boaderLen = kangtaoHeight * 0.14;
@@ -110,5 +128,24 @@ function instantDraw()
     
     context.moveTo(marginStartRightX, topY);
     context.lineTo(topCenterEndRight, topY);
+    context.stroke();
+
+    let leftStartX = window.innerWidth * 0.05;
+    let innerStartTopY = 30;
+    let innerStartBotY = window.innerHeight - kangtaoHeight - 10;
+    context.moveTo(leftStartX, innerStartTopY);
+    context.lineTo(leftStartX, innerStartBotY);
+    context.stroke();
+
+    context.moveTo(leftStartX, innerStartTopY);
+    context.lineTo(window.innerWidth - leftStartX, innerStartTopY);
+    context.stroke();
+
+    context.moveTo(leftStartX, innerStartBotY);
+    context.lineTo(window.innerWidth - leftStartX, innerStartBotY);
+    context.stroke();
+
+    context.moveTo(window.innerWidth - leftStartX, innerStartTopY);
+    context.lineTo(window.innerWidth - leftStartX, innerStartBotY);
     context.stroke();
 }
