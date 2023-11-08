@@ -149,7 +149,10 @@ function instantDraw()
     context.lineTo(window.innerWidth - leftStartX, innerStartBotY);
     context.stroke();
 
-    // update iframe
-    document.getElementById("innerFrame").width = window.innerWidth * 0.9;
-    document.getElementById("innerFrame").height = window.innerHeight - 40 - window.innerWidth * 0.2 * 0.212;
+    let innerFrameElement = document.getElementById("innerFrame");
+    if(innerFrameElement != null)
+    {
+        document.getElementById("innerFrame").width = window.innerWidth * 0.9;
+        document.getElementById("innerFrame").height = window.innerHeight - 40 - window.innerWidth * 0.2 * 0.212;
+    }
 }
