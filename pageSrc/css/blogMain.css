@@ -3,3 +3,7 @@
 code{
     font-family: Consolas, 'Courier New', Courier, monospace;
 }
+
+pre{
+    background-color: darkblue;
+}
