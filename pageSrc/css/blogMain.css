@@ -1,4 +1,7 @@
 #blogMain{color: white;}
+html{
+    background-color: rgb(24, 25, 44);
+}
 
 code{
     font-family: Consolas, 'Courier New', Courier, monospace;
@@ -6,5 +9,5 @@ code{
 }
 
 pre{
-    background-color: darkblue;
+    background-color: rgb(0, 0, 0);
 }

@@ -39,7 +39,7 @@ int sc_main(int argc, char* argv[])
 最后编译的命令就是`g++ -L /usr/share/systemc/lib -lsystemc hello.cpp -o name`
 
 ### 学习的内容
-SC_CTOR和SC_HAS_PROCESS
+#### SC_CTOR和SC_HAS_PROCESS
 
 `SC_CTOR`用来声明并定义`SC_MODULE`的构造函数，`SC_CTOR`只能有一个参数，只能在`SC_MODULE`代码块内出现
 
@@ -56,3 +56,9 @@ SC_MODULE(example)
     }
 }
 ```
+
+#### Simulation Process
+Simulation Process是一个`SC_MODULE`的成员函数，参数和返回都是`void`，这个函数会被注册到kernel中，主要分为三种
+* `SC_METHOD`
+* `SC_THREAD`
+* `SC_CTHREAD`
