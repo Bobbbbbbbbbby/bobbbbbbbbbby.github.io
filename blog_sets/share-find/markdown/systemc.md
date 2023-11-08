@@ -37,3 +37,22 @@ int sc_main(int argc, char* argv[])
 在运行的时候需要指定库文件的位置，因为是动态链接库，要在运行的时候链接。如果不指定位置并不知道库文件在什么位置，为了做到这一点，在.bashrc中加入`export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/share/systemc/lib`
 
 最后编译的命令就是`g++ -L /usr/share/systemc/lib -lsystemc hello.cpp -o name`
+
+### 学习的内容
+SC_CTOR和SC_HAS_PROCESS
+
+`SC_CTOR`用来声明并定义`SC_MODULE`的构造函数，`SC_CTOR`只能有一个参数，只能在`SC_MODULE`代码块内出现
+
+`SC_HAS_PROCESS`会声明一个`SC_MODULE`的构造函数，这个构造函数可以在别处定义，且可以有多个参数，代码示例如下：
+```cpp
+SC_MODULE(example)
+{
+    SC_HAS_PROCESS(function);
+
+    void function(int a, int b)
+    {
+        int c = a + b;
+        std::cout << a + b;
+    }
+}
+```
