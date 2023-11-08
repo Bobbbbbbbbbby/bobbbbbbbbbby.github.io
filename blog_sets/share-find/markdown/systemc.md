@@ -62,3 +62,74 @@ Simulation Process是一个`SC_MODULE`的成员函数，参数和返回都是`vo
 * `SC_METHOD`
 * `SC_THREAD`
 * `SC_CTHREAD`
+
+在`SC_MODULE`的构造函数中进行注册，其中`SC_THREAD`用到最多
+
+别人写的内容中的注意事项：
+* 为了使一个`SC_THREAD`或者`SC_CTHREAD`过程被再次调用，需要使用一个`while`循环以确保其已经释放
+* 一个`SC_THREAD`过程不要求使用`while`循环，可由`next_trigger()`再次调用
+* SystemC中的仿真时间并不是真实时间，而是仿真内核的一个计数器
+
+示例代码：
+```cpp
+#include<systemc>
+#include<iostream>
+using namespace std;
+using namespace sc_core;
+
+SC_MODULE(Process)
+{
+    sc_clock clk;
+    void _method(void)
+    {
+        cout << "method triggered @ " << sc_time_stamp() << endl;
+        next_trigger(sc_time(1, SC_SEC));
+    }
+
+    void _thread(void)
+    {
+        while(true)
+        {
+            cout << "thread triggered @ " << sc_time_stamp() << endl;
+            wait(1, SC_SEC);
+        }
+    }
+
+    void _cthread(void)
+    {
+        while(true)
+        {
+            cout << "cthread triggered @ " << sc_time_stamp() << endl;
+            wait();
+        }
+    }
+
+    SC_CTOR(Process) : clk("clk", 1, SC_SEC){
+        SC_METHOD(_method);
+        SC_THREAD(_thread);
+        SC_CTHREAD(_cthread, clk);
+    }
+}
+;
+
+int sc_main(int argc, char* argv[])
+{
+    Process instance("instance");
+    cout << "begin @ " << sc_time_stamp() << endl;
+    sc_start(4, SC_SEC);
+    cout << "end @ " << sc_time_stamp() << endl;
+    return 0;
+}
+```
+
+#### Simulation Stage
+简而言之就是`sc_core`有四个虚的函数：
+* `virtual void before_end_of_elaboration()`
+* `virtual void end_of_elaboration()`
+* `virtual void start_of_simulation()`
+* `virtual void end_of_simulation()`
+
+这四个函数将在对应的阶段节点被调用，可以用来输出或者处理内容，要利用这几个函数只需要在某个`SC_MODULE`里面将这些函数实现即可
+
+特别注意的是`end_of_simulation()`的效果只有在用户主动调用`sc_stop()`的时候才会体现出来
+
