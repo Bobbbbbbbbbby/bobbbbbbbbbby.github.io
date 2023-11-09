@@ -23,7 +23,7 @@ function loadBlogArticle(markdownURL)
     blogMainOrigin = document.getElementById("blogMain").innerHTML;
     document.getElementById("blogMain").innerHTML = `<input type="button" onclick="reloadOrigin()" value = "Go Back">`;
     readTextFile(markdownURL)
-        .then((markdown) => document.getElementById("blogMain").innerHTML += marked.parse(markdown));
+        .then((markdown) => {document.getElementById("blogMain").innerHTML += marked.parse(markdown); hljs.highlightAll();});
 }
 
 function reloadOrigin()
