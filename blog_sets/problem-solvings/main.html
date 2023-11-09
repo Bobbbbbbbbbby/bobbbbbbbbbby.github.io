@@ -23,7 +23,7 @@
         <div id="articleList"></div>
         <script>
             getBlogListHTML("https://bobbbbbbbbbby.github.io/blog_sets/problem-solvings/")
-            .then((inner)=> document.getElementById("articleList").innerHTML = inner);
+            .then((inner)=> {document.getElementById("articleList").innerHTML = inner; hljs.highlightAll();});
         </script>
     </div>
 </body>
