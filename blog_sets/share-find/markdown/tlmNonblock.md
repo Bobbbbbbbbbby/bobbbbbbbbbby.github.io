@@ -4,6 +4,7 @@
 基本的结构还是没有变化，还是一个top里面有一个initiator和target，但是传输方式有两种实现
 
 ## Using backward path
+```
 initiator transport forward begin request
                                             target write request fifo
 initiator wait signal
@@ -14,6 +15,7 @@ initiator stop wait
                                             target transport backward begin response
 initiator write response to fifo
 initiator transport forward end response
+```
 
 所以这种情况下，initiator就有三个主要函数
 * `initiator_thread`
@@ -73,6 +75,7 @@ SC_MODULE(Target){
 ```
 
 ## Using return path
+```
 initiator transport forward begin request           target write request fifo
 return and end request                              target return end request
                                                     
@@ -80,6 +83,7 @@ return and end request                              target return end request
                                                     target transport backward begin response
 initiator handle transection
 initiator return end request                        target receive end request
+```
 
 这种情况下，initiator有两个主要函数，就是前一部分去掉`response_handler`
 
