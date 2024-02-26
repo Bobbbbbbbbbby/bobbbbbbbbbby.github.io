@@ -3,6 +3,7 @@
         {"name":"开发日志", "file":"devBlog.md"},
         {"name":"SystemC相关", "file":"systemc.md"},
         {"name":"TLM基础", "file":"tlmBasic.md"},
-        {"name":"TLM非阻塞", "file":"tlmNonblock.md"}
+        {"name":"TLM非阻塞", "file":"tlmNonblock.md"},
+        {"name":"DRAM工作原理", "file":"howDRAMwork.md"}
     ]
 }
