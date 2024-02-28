@@ -1,5 +1,5 @@
 # DRAM工作原理
-
+---
 ## DRAM层级
 自上到下：
 * Channel<br>
@@ -15,7 +15,7 @@
     一个memory array有若干行(row)和若干列(column)
 * Cell<br>
     Cell是内存的最小单元
-
+---
 ## DRAM结构说明
 ### Cell
 1 * cell = 1 * transistor + 1 * capacitance
