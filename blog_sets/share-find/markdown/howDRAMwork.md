@@ -6,7 +6,7 @@
     一台电脑通常有若干个Channel的内存
 * Rank<br>
     一个rank通常等同于一条内存
-* DRAM Chip<br>
+* Bank Group<br>
     一个DRAM chip是一个内存颗粒
 * Bank<br>
     一个bank由若干个memory array构成
@@ -48,6 +48,7 @@ Bank是控制DRAM的最小单元！
 
 将8个memory array堆叠，每个memory array公用相同的输入信号线，每个memory array输入相同位置的bit，合起来就是一个byte。
 
+
 #### Bank设计考量
 * Bank Burst Mode
 
@@ -69,3 +70,19 @@ Bank是控制DRAM的最小单元！
 Bank interleave使得控制器交错的读取不同bank的数据，来确保读取bank一直处于可用状态。
 
 如果控制器不可避免的连续读取相同bank中的（不同row）的数据，则将会出现必须阻塞等待的情况，即bank conflict.
+
+### Bank Group
+多个bank组成一个bank group，也可以称为一个DRAM chip。一个DRAM chip同一时间只能访问其中的一个bank。
+
+### Rank
+多个bank group封装在一个内存条上，此内存条就是一个rank完善
+
+---
+## 数据传输相关内容
+### 数据总线
+现代电脑数据总线为64bit，而早期电脑数据总线为32bit。
+
+64bit数据总线内存被称为DIMM - Dual Inline Memory Module
+32bit数据总线内存被称为SIMM - Single Inline Memory Module
+
+由[bank](#bank)以及[bank group](#bank-group)的内容，每次读取或写入，为了完整的填满64bit数据总线，则需要同时读取8个bank，而一个bank group同一时间只对一个bank进行读取，因此需要同时读取8个bank group的相同位置的bank来得到64个bit
