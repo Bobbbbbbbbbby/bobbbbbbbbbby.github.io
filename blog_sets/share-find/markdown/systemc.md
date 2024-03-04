@@ -1,5 +1,18 @@
 # SystemC
 真正意义上的开始研究怎么自己写一个SystemC的程序然后让他跑起来
+## 编译SystemC
+首先当然是跟着官方给的文件里面按照他的方法搞一遍，但是发现了一个问题
+
+在进行configure的时候会出现报错：
+```sh
+config.status: error: cannot find input file: `src/Makefile.in'
+```
+
+我并不知道是什么问题，但是找到了正确的解决方案：
+* `sudo apt install automake`
+* 在SystemC根目录下，`aclocal`
+* `automake --add-missing`
+* 再到configure的文件夹下，重新configure就可以成功了
 
 ## Hello World
 ```cpp
