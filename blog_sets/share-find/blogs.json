@@ -4,6 +4,7 @@
         {"name":"SystemC相关", "file":"systemc.md"},
         {"name":"TLM基础", "file":"tlmBasic.md"},
         {"name":"TLM非阻塞", "file":"tlmNonblock.md"},
-        {"name":"DRAM工作原理", "file":"howDRAMwork.md"}
+        {"name":"DRAM工作原理", "file":"howDRAMwork.md"},
+        {"name":"TLM Generic Payload扩展", "file":"tlmExtension.md"}
     ]
 }
