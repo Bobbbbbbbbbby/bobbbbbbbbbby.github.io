@@ -5,6 +5,7 @@
         {"name":"TLM基础", "file":"tlmBasic.md"},
         {"name":"TLM非阻塞", "file":"tlmNonblock.md"},
         {"name":"DRAM工作原理", "file":"howDRAMwork.md"},
-        {"name":"TLM Generic Payload扩展", "file":"tlmExtension.md"}
+        {"name":"TLM Generic Payload扩展", "file":"tlmExtension.md"},
+        {"name":"在终端环境使用Speedtest", "file":"speedtestCLI.md"}
     ]
 }
