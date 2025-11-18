@@ -6,6 +6,7 @@
         {"name":"TLM非阻塞", "file":"tlmNonblock.md"},
         {"name":"DRAM工作原理", "file":"howDRAMwork.md"},
         {"name":"TLM Generic Payload扩展", "file":"tlmExtension.md"},
-        {"name":"在终端环境使用Speedtest", "file":"speedtestCLI.md"}
+        {"name":"在终端环境使用Speedtest", "file":"speedtestCLI.md"},
+        {"name":"配置sing-box使用代理链接", "file":"sing-box.md"}
     ]
 }
